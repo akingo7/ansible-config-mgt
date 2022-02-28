@@ -27,3 +27,7 @@
             service:
                 name: ssh
                 state: stated
+        -   name: create a file in /home directory
+            command:
+                touch /home/Newfile.txt
+                echo "This file is created on" `uptime` >> /home/Newfile.txt
