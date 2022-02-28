@@ -1,12 +1,12 @@
 [webserver]
-ansible_host=172.31.37.117 ansible_ssh-user='ec2-user'
-ansible_host=172.31.42.216 ansible_ssh_user='ec2-user'
+172.31.37.117 ansible_ssh-user='ec2-user'
+172.31.42.216 ansible_ssh_user='ec2-user'
 
 [database]
-ansible_host=172.31.40.8 ansible_ssh_user='ec2-user'
+172.31.40.8 ansible_ssh_user='ec2-user'
 
 [nfs]
-ansible_host=172.31.36.168 ansible_ssh_user='ec2-user'
+172.31.36.168 ansible_ssh_user='ec2-user'
 
 [loadbalancer]
-ansible_host=172.31.39.152 ansible_ssh_user='ubuntu'
+172.31.39.152 ansible_ssh_user='ubuntu'
