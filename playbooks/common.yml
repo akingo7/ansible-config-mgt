@@ -1,0 +1,33 @@
+-   name: Update webserver, database, nfs
+    hosts: webserver, database, nfs
+    remote_user: ec2-user
+    become: yes
+    become_user: root
+    tasks: 
+        -   name: Ensure that wireshark is at the latest version 
+            yum:
+                name: wireshark
+                state: latest
+
+-   name: Update Loadbalancer
+    hosts: loadbalancer
+    remote_user: ubuntu
+    become: yes
+    become_user: root
+    tasks:
+        -   name: Update apt repo
+            apt:
+                update_cache: yes
+
+        -   name: Ensure that wireshark is at the latest version
+            apt:
+                name: wireshark
+                state: latest
+        -   name: Check if ssh is running
+            service:
+                name: ssh
+                state: stated
+        -   name: create a file in /home directory
+            command:
+                touch /home/Newfile.txt
+                echo "This file is created on" `uptime` >> /home/Newfile.txt
