@@ -1,0 +1,41 @@
+---
+-   name: Install httpd and git
+    become: yes
+    tasks: 
+        ansible.builtin.yum:
+            name: httpd
+            state: present
+    
+-   name: Install git
+    become: yes
+    tasks:
+        ansible.builtin.git:
+            name: git
+            state: latest
+
+-   name: Clone my repository
+    become: yes
+    tasks:
+        ansible.builtin.git:
+            repo: https://github.com/akingo7/tooling.git
+            dest: /var/www/html
+            force: yes
+-   name: Copy /var/www/html/html to /var/www
+    become: yes
+    tasks:
+        ansible.builtin.command: cp -R /var/www/html/html /var/www
+
+-   name: Check httpd status
+    become: yes
+    tasks:
+        ansible.builtin.service:
+            name: httpd
+            state: started
+
+-   name: Delete /var/www/html/html
+    become: yes
+    tasks:
+        ansible.builtin.file:
+            path: /var/www/html/html
+            state: absent
+            
