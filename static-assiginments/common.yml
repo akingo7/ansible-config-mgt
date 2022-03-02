@@ -26,7 +26,7 @@
         -   name: Check if ssh is running
             service:
                 name: ssh
-                state: stated
+                state: started
         -   name: create a file in /home/ubuntu directory
             file: 
                 path: /home/ubuntu/NewFile.txt
