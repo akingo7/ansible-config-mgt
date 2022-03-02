@@ -1,5 +1,6 @@
 ---
--   name: Install httpd and git
+
+-   name: Install httpd
     become: yes
     tasks: 
         ansible.builtin.yum:
@@ -20,6 +21,7 @@
             repo: https://github.com/akingo7/tooling.git
             dest: /var/www/html
             force: yes
+
 -   name: Copy /var/www/html/html to /var/www
     become: yes
     tasks:
