@@ -3,4 +3,4 @@
 -   import_playbook: ../static-assiginments/common.yml
 
 -   hosts: uat-webservers
--   import_playbook: ../static-assiginments/uat-webservers
+-   import_playbook: ../static-assiginments/uat-webservers.yml
