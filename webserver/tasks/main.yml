@@ -9,19 +9,19 @@
     become: yes
     ansible.builtin.git:
             name: git
-            state: latest
+            state: present
 
 -   name: Clone my repository
     become: yes
     ansible.builtin.git:
             repo: 'https://github.com/akingo7/tooling.git'
-            dest: /var/www/html
+            dest: /var/www/html/
             force: yes
 
 -   name: Copy /var/www/html/html to /var/www
     become: yes
     command:
-        cp -r /var/www/html/html /var/www
+        cp -r /var/www/html/html/ /var/www/
 
 -   name: Check httpd status
     become: yes
