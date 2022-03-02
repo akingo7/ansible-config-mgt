@@ -20,7 +20,7 @@
 
 -   name: Copy /var/www/html/html to /var/www
     become: yes
-    ansible.builtin.command: cp -r /var/www/html/html/ /var/www/
+    ansible.builtin.command: mv -r /var/www/html/html/ /var/www/
 
 -   name: Check httpd status
     become: yes
