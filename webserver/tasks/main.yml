@@ -14,7 +14,7 @@
 -   name: Clone my repository
     become: yes
     ansible.builtin.git:
-            repo: https://github.com/akingo7/tooling.git
+            repo: 'https://github.com/akingo7/tooling.git'
             dest: /var/www/html
             force: yes
 
