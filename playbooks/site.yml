@@ -1,5 +1,5 @@
 ---
--   Name: Load Balancer assignments
+-   name: Load Balancer assignments
     import_playbook: ../static-assignments/loadbalancers.yml
 
 
