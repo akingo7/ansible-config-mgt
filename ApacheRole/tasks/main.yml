@@ -18,7 +18,7 @@
             dest: /var/www/html/
             force: yes
 
--   name: Copy /var/www/html/html to /var/www and rm index_html file
+-   name: Copy /var/www/html/html to /var/www
     become: yes
     command:
         cp -r /var/www/html/html/ /var/www/
@@ -30,3 +30,8 @@
             path: /var/www/html/html
             state: absent
     notify: Check httpd status
+
+-   name: Remove the default page
+    ansible.builtin.file:
+      path: /var/www/html/index.html
+      state: absent
