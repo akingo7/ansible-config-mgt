@@ -8,5 +8,5 @@
     - always
 
 -   hosts: uat-webservers
-    import_playbook: ../static-assignments/webservers.yml
+    import_playbook: "../static-assignments/webservers.yml"
 
