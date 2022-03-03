@@ -1,0 +1,17 @@
+---
+
+-   hosts: all
+    name: Collate variables from Environment if it exists
+    tasks:
+        name: Include first found variable from the env-vars directory
+        include_vars: "{{ item }}"
+        with_first_found:
+            files:
+            - dev.yml
+            - stage.yml
+            - uat.yml
+            - prod.yml
+            path:
+            - "{{playbook_dir}}/../env-vars"
+        tags:
+        - always
