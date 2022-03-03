@@ -1,0 +1,7 @@
+---
+- hosts: lb
+  Name: Install load balancer
+  import_tasks: 
+    - { role: ApacheRole, when: enable_apache_lb and load_balancer_is_requied }
+    - { role: NginxRole, when: enable_nginx_lb and load_balancer_is_requied }
+

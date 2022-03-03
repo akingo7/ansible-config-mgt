@@ -1,11 +1,19 @@
 ---
--   name: wireshark assignments
-    import_playbook: ../static-assignments/common.yml
+-   Name: Load Balancer assignments
+    import_playbook: ../static-assignments/loadbalancers.yml
 
--   name: Import dynamic variables    
-    import_playbook: ../dynamic-assignments/env-vars.yml
-    tags:
-    - always
 
--   name: Webserver assignments 
-    import_playbook: ../static-assignments/webservers.yml
+
+
+
+
+#-   name: wireshark assignments
+#    import_playbook: ../static-assignments/common.yml#
+
+#-   name: Import dynamic variables    
+#    import_playbook: ../dynamic-assignments/env-vars.yml
+#    tags:
+#    - always
+
+#-   name: Webserver assignments 
+#    import_playbook: ../static-assignments/webservers.yml
