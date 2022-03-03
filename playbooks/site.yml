@@ -1,10 +1,10 @@
 ---
 -   name: wireshark assignments
     import_playbook: ../static-assignments/common.yml
-    
+
 -   name: Import dynamic variables    
     import_playbook: .../dynamic-assignments/env-vars.yml
-    task:
+    tags:
     - always
 
 -   name: Webserver assignments 
