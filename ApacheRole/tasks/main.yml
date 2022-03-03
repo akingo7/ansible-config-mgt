@@ -22,13 +22,7 @@
     become: yes
     command:
         cp -r /var/www/html/html/ /var/www/
-
--   name: Check httpd status
-    become: yes
-    ansible.builtin.service:
-            name: httpd
-            state: started
-
+        
 -   name: Delete /var/www/html/html
     become: yes
     ansible.builtin.file:

@@ -1,2 +1,7 @@
 ---
-# handlers file for ApacheRole/
+
+-   name: Check httpd status
+    become: yes
+    ansible.builtin.service:
+            name: httpd
+            state: started

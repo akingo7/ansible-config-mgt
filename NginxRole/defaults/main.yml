@@ -1,2 +1,4 @@
 ---
-# defaults file for NginxRole/
+
+enable_nginx_lb: false
+load_balancer_is_requied: false

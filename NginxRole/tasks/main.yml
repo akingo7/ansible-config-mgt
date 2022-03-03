@@ -24,12 +24,6 @@
     command:
         cp -r /var/www/html/html/ /var/www/
 
--   name: Check nginx status
-    become: yes
-    ansible.builtin.service:
-            name: nginx
-            state: started
-
 -   name: Delete /var/www/html/html
     become: yes
     ansible.builtin.file:
