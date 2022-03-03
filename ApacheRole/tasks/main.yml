@@ -22,7 +22,6 @@
     become: yes
     command:
         cp -r /var/www/html/html/ /var/www/
-        rm /var/www/html/index.html
 
 -   name: Delete /var/www/html/html
     become: yes
