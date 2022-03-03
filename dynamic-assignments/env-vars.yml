@@ -7,11 +7,11 @@
         include_vars: "{{ item }}"
         with_first_found:
             files:
-            - dev.yml
-            - stage.yml
-            - uat.yml
-            - prod.yml
+                - dev.yml
+                - stage.yml
+                - uat.yml
+                - prod.yml
             path:
-            - "{{playbook_dir}}/../env-vars"
+                - "{{playbook_dir}}/../env-vars"
         tags:
         - always
