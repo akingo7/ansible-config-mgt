@@ -29,9 +29,10 @@
     ansible.builtin.file:
             path: /var/www/html/html
             state: absent
-    notify: Check httpd status
+
 
 -   name: Remove the default page
     ansible.builtin.file:
       path: /var/www/html/index.html
       state: absent
+    notify: Check httpd status
