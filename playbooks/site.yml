@@ -1,3 +1,11 @@
 ---
--   name: Include dynamic variables
+-   name: wireshark assignments
     import_playbook: ../static-assignments/common.yml
+    
+-   name: Import dynamic variables    
+    import_playbook: .../dynamic-assignments/env-vars.yml
+    task:
+    - always
+
+-   name: Webserver assignments 
+    import_playbook: ../static-assignments/webserver
