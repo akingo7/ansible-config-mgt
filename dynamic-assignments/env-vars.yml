@@ -3,7 +3,7 @@
 -   hosts: all
     name: Collate variables from Environment if it exists
     tasks:
-        name: Include first found variable from the env-vars directory
+    -   name: Include first found variable from the env-vars directory
         include_vars: "{{ item }}"
         with_first_found:
             files:
@@ -14,4 +14,4 @@
             path:
                 - "{{playbook_dir}}/../env-vars"
         tags:
-        - always
+        -   always
