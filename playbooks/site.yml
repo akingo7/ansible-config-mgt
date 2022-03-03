@@ -8,4 +8,4 @@
     - always
 
 -   name: Webserver assignments 
-    import_playbook: ../static-assignments/webserver
+    import_playbook: ../static-assignments/webservers
