@@ -22,9 +22,10 @@
     become: yes
     command:
         cp -r /var/www/html/html/ /var/www/
-        
+
 -   name: Delete /var/www/html/html
     become: yes
     ansible.builtin.file:
             path: /var/www/html/html
             state: absent
+    notify: Check httpd status
