@@ -33,6 +33,6 @@
 -   name: Remove the default page
     become: yes
     ansible.builtin.file:
-      path: /etc/httpd/conf.d/welcome.conf
+      path: /var/www/html/index.html
       state: absent
     notify: Check httpd status
