@@ -1,4 +1,4 @@
 ---
 -   hosts: all
     name: Include dynamic variables
-    import_playbook: ../static-assignments/common.yml
+    import_playbook: /home/ubuntu/ansible-config-artifacts/static-assignments/common.yml
