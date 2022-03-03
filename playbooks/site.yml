@@ -8,4 +8,4 @@
     - always
 
 -   name: Webserver assignments 
-    import_playbook: ../static-assignments/webservers
+    import_playbook: ../static-assignments/webservers.yml
