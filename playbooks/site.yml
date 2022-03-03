@@ -1,4 +1,3 @@
 ---
--   hosts: uat-webservers
-    name: Include dynamic variables
+-   name: Include dynamic variables
     import_playbook: ../static-assignments/common.yml
