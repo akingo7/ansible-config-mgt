@@ -1,47 +1,11 @@
 pipeline {
   agent any
   stages {
-
-    stage('Build') {
+    stage('Run Ansible Playbook On Dev') {
       steps {
-        script {
-          sh 'echo "Building Stage"'
-        }
+        ansiblePlaybook(playbook: '../playbook/site.yml', become: true, becomeUser: 'root', inventory: '../inventory/dev')
       }
     }
-
-    stage('Test') {
-      steps {
-        script {
-          sh 'echo "Test Stage"'
-        }
-      }
-    }
-
-    stage('Paackage') {
-      steps {
-        script {
-          sh 'echo "Package Stage"'
-        }
-      }
-    }
-
-    stage('Deploy') {
-      steps {
-        script {
-          sh 'echo "Deploy Stage"'
-        }
-      }
-    }
-
-    stage('Clean up') {
-      steps {
-        script {
-          sh 'echo "Clean up Stage"'
-        }
-      }
-    }
-
 
   }
 }
