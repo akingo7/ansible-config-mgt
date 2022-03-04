@@ -1,0 +1,4 @@
+---
+
+enable_nginx_lb: yes
+load_balancer_is_requied: yes
