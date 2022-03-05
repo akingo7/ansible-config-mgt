@@ -1,17 +1,23 @@
 ---
 -   name: Install webserver on tooling
     import_playbook: ../static-assignments/tooling.yml
+    tags:
+    - webserver
 
 -   name: Install mysql on database
     import_playbook: ../static-assignments/db.yml
+    tags:
+    - database
 
-#-   name: wireshark assignments
-#    import_playbook: ../static-assignments/common.yml#
+-   name: wireshark assignments
+    import_playbook: ../static-assignments/common.yml
 
-#-   name: Import dynamic variables    
-#    import_playbook: ../dynamic-assignments/env-vars.yml
-#    tags:
-#    - always
+-   name: Import dynamic variables    
+    import_playbook: ../dynamic-assignments/env-vars.yml
+    tags:
+    - dynamic_variable
 
-#-   name: Webserver assignments 
-#    import_playbook: ../static-assignments/webservers.yml
+-   name: Webserver assignments 
+    import_playbook: ../static-assignments/webservers.yml
+    tags:
+    - webserver_apache
