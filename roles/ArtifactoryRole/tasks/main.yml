@@ -27,6 +27,7 @@
 
 
 - name: Restart Artifactory
+  become: yes
   service:
     name: artifactory
     state: started
