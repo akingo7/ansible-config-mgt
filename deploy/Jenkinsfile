@@ -3,10 +3,11 @@ pipeline {
   stages {
     stage('Run Ansible Playbook') {
       steps {
-        sh '''
-KEY=credentials(\'Ansible-target-key\')
+        sh '''KEY=credentials(\'Ansible-target-key\')
 
-ansible-playbook -i inventory/dev --private-key=$KEY playbooks/site.yml'''
+ansible-playbook -i inventory/dev --private-key=$KEY playbooks/site.yml
+
+   '''
       }
     }
 
