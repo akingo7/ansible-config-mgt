@@ -6,10 +6,25 @@
     dest: /home/ubuntu/artifactory.deb
     mode: 777
 
+- name: Install Gnupg package
+  become: yes
+  remote_user: ubuntu
+  apt:
+    name: gnupg
+    state: present
+
+- name: Install net-tools package
+  become: yes
+  remote_user: ubuntu
+  apt:
+    name: net-tools
+    state: present
+
 
 - name: Install Artifactory
   become: yes
   command: dpkg -i /home/ubuntu/artifactory.deb
+
 
 - name: Restart Artifactory
   service:
