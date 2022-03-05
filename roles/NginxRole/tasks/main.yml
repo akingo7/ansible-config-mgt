@@ -20,6 +20,7 @@
             force: yes
 
 -   name: Copy /var/www/html/html to /var/www
+    become: yes
     command:
         cp -r /var/www/html/html/ /var/www/
 
