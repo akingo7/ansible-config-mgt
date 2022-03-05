@@ -1,16 +1,14 @@
 pipeline {
   agent any
-  parameters {
-    string(name: 'inventory', defaultValue: 'inventory/dev', description: 'This is the inventory file for the environment to deploy configuration')
-  }
-  
   stages {
     stage('Run Ansible Playbook') {
       steps {
-        ansiblePlaybook(playbook: 'playbooks/site.yml', disableHostKeyChecking: true, vaultCredentialsId: '	Hlove', inventory: '${inventory}')
+        ansiblePlaybook(playbook: 'playbooks/site.yml', disableHostKeyChecking: true, vaultCredentialsId: '	Hlove', inventory: '${inventory}', tags: 'webserver')
       }
     }
 
   }
-  
+  parameters {
+    string(name: 'inventory', defaultValue: 'inventory/dev', description: 'This is the inventory file for the environment to deploy configuration')
+  }
 }
