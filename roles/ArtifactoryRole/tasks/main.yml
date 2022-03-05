@@ -1,7 +1,7 @@
 ---
 - name: Install Gnupg2 package
   become: yes
-  remote_user: ec2-user
+  remote_user: ubuntu
   apt:
     name: gnupg2
     state: present
@@ -10,22 +10,24 @@
 
 - name: Download GPG key
   become: yes
-  remote_user: ec2-user
+  remote_user: ubuntu
   apt_key: 
     url: https://api.bintray.com/orgs/jfrog/keys/gpg/public.key
     state: present
 
 - name: Add JFrog repo
   become: yes
-  remote_user: ec2-user
+  remote_user: ubuntu
   command: echo "deb https://jfrog.bintray.com/artifactory-debs bionic main" | tee /etc/apt/sources.list.d/jfrog.list
 
 - name: Install jfrog
   apt:
+    update_cache: yes
     name: jfrog-artifactory-oss
     state: present
 
 - name: state artifactory 
+  become: yes
   service:
     name: artifactory
     state: restart
