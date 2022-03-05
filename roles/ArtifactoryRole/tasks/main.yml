@@ -2,7 +2,7 @@
 - name: Download artifactory
   become: yes
   get_url:
-    src: https://releases.jfrog.io/artifactory/artifactory-pro-debs/pool/jfrog-artifactory-pro/jfrog-artifactory-pro-[RELEASE].deb
+    url: https://releases.jfrog.io/artifactory/artifactory-pro-debs/pool/jfrog-artifactory-pro/jfrog-artifactory-pro-[RELEASE].deb
     dest: /home/ubuntu/artifactory.deb
     mode: 777
 
