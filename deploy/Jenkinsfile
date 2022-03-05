@@ -6,7 +6,7 @@ pipeline {
         sh '''
 KEY=credentials(\'Ansible-target-key\')
 
-ansible-playbook -i inventory/dev --private-key playbooks/site.yml'''
+ansible-playbook -i inventory/dev --private-key=$KEY playbooks/site.yml'''
       }
     }
 
