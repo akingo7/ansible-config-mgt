@@ -1,0 +1,11 @@
+pipeline {
+  agent any
+  stages {
+    stage('Run Ansible Playbook') {
+      steps {
+        ansiblePlaybook(playbook: 'playbooks/site.yml', inventory: 'inventory/dev', credentialsId: 'Ansible-target-key', disableHostKeyChecking: true)
+      }
+    }
+
+  }
+}
