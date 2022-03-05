@@ -2,5 +2,5 @@
 - name: Install Mysql Using Ansible Roles
   hosts: db
       roles:
-        - role: mysql
+        - role: role/mysql
           become: yes
