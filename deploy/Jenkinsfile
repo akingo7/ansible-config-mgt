@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Run Ansible Playbook') {
       steps {
-        ansiblePlaybook(playbook: 'playbooks/site.yml', disableHostKeyChecking: true, vaultCredentialsId: '	Hlove', inventory: `${inventory})
+        ansiblePlaybook(playbook: 'playbooks/site.yml', disableHostKeyChecking: true, vaultCredentialsId: '	Hlove', inventory: ${inventory})
       }
     }
 
