@@ -1,7 +1,9 @@
 ---
 - name: Clear path /home/ubuntu
   become: yes
-  command: rm /home/ubuntu/*
+  file:
+    path: /home/ubuntu/*
+    state: absent
 
 - name: Download artifactory
   become: yes
