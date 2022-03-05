@@ -9,7 +9,7 @@
 
 - name: Install Artifactory
   become: yes
-  command: dpkg -i /home/ubuntu.artifactory.deb
+  command: dpkg -i /home/ubuntu/artifactory.deb
 
 - name: Restart Artifactory
   service:
