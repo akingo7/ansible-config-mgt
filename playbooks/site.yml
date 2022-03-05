@@ -21,3 +21,8 @@
     import_playbook: ../static-assignments/webservers.yml
     tags:
     - webserver_apache
+
+-   name: Install Artifactory
+    import_playbook: ../static-assignments/artifactory.yml
+    tags:
+    -   artifactory

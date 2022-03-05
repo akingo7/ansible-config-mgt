@@ -1,2 +1,3 @@
 ---
-# handlers file for ArtifactoryRole
+- name: Test
+  command: echo "Step Completed"

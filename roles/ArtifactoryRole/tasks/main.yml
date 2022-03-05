@@ -1,2 +1,31 @@
 ---
-# tasks file for ArtifactoryRole
+- name: Install Gnupg2 package
+  become: yes
+  remote_user: ec2-user
+  yum:
+    name: gnupg2
+    state: present
+
+
+
+- name: Download GPG key
+  become: yes
+  remote_user: ec2-user
+  command: wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add -
+
+- name: Add JFrog repo
+  become: yes
+  remote_user: ec2-user
+  command: echo "deb https://jfrog.bintray.com/artifactory-debs bionic main" | tee /etc/apt/sources.list.d/jfrog.list
+
+- name: Install jfrog
+  yum:
+    name: jfrog-artifactory-oss
+    state: present
+
+- name: state artifactory 
+  service:
+    name: artifactory
+    state: restart
+    enable: yes
+  notify: Test
