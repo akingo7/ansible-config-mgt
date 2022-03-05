@@ -21,6 +21,7 @@
   command: echo "deb https://jfrog.bintray.com/artifactory-debs bionic main" | tee /etc/apt/sources.list.d/jfrog.list
 
 - name: Install jfrog
+  become: yes
   apt:
     update_cache: yes
     name: jfrog-artifactory-oss
