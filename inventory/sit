@@ -1,0 +1,15 @@
+[tooling]
+3.142.74.71 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/home/ubuntu/mykey.pem
+
+[todo]
+
+
+[nginx]
+
+
+[db:vars]
+ansible_user=ec2-user
+#ansible_python_interpreter=/usr/bin/python
+
+[db]
+3.145.136.177 ansible_ssh_private_key_file=/home/ubuntu/mykey.pem
