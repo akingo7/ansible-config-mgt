@@ -2,9 +2,10 @@
 pipeline {
     agent any
     stages{
-
+        stage('Add Parameter'){
     parameters {
       string(name: 'inventory', defaultValue: 'dev',  description: 'This is the inventory file for the environment to deploy configuration')
+    }
     }
     }
   }
