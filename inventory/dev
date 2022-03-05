@@ -1,5 +1,5 @@
 [tooling]
-3.142.74.71 ansible_ssh_user=ec2-user
+3.142.74.71 ansible_ssh_user=ubuntu
 
 [todo]
 
