@@ -1,4 +1,8 @@
 ---
+- name: Clear path /home/ubuntu
+  become: yes
+  command: rm /home/ubuntu/*
+
 - name: Download artifactory
   become: yes
   get_url:
