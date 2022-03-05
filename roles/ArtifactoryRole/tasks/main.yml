@@ -11,7 +11,7 @@
 - name: Download GPG key
   become: yes
   remote_user: ec2-user
-  command: wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add -
+  command: get-url -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add -
 
 - name: Add JFrog repo
   become: yes
