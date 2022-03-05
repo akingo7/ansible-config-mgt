@@ -6,6 +6,7 @@
 
 -   name: Install mysql on database
     import_playbook: ../static-assignments/db.yml
+    tags
     - database
 
 -   name: wireshark assignments
@@ -18,4 +19,5 @@
 
 -   name: Webserver assignments 
     import_playbook: ../static-assignments/webservers.yml
+    tags
     - webserver_apache
