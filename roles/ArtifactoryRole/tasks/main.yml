@@ -3,7 +3,7 @@
   become: yes
   remote_user: ubuntu
   apt:
-    name: gnupg2
+    name: gnupg
     state: present
 
 
