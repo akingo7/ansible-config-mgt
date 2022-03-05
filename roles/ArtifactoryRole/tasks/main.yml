@@ -24,13 +24,6 @@
 - name: Install Artifactory
   become: yes
   command: dpkg -i /home/ubuntu/artifactory.deb
-
-
-- name: Restart Artifactory
-  become: yes
-  service:
-    name: artifactory
-    state: started
   notify: Test
   
 
