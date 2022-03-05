@@ -1,5 +1,5 @@
 [tooling]
-18.188.48.30 ansible_user=ec2-user
+18.188.48.30 ansible_ssh_user=ec2-user
 
 [todo]
 
