@@ -8,9 +8,8 @@
 
 
 - name: Install Artifactory
-  apt:
-    name: /home/ubuntu/artifactory.deb
-    state: present
+  become: yes
+  command: dpkg -i /home/ubuntu.artifactory.deb
 
 - name: Restart Artifactory
   service:
