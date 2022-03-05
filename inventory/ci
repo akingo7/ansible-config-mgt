@@ -8,5 +8,5 @@
 
 
 [artifactory]
-18.221.189.1 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/home/ubuntu/mykey.pem
+3.144.137.228 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/home/ubuntu/mykey.pem
 
