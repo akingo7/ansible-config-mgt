@@ -1,0 +1,27 @@
+---
+- name: Jenkins Server PHP dependences
+  hosts: jenkins 
+  become: yes
+  tasks:
+
+  - name: Jenkins Server PHP dependences
+    apt:
+      name: zip
+      service: present
+
+  - name: Jenkins Server PHP dependences
+    apt:
+      name: libapache2-mod-php
+      service: present
+
+
+  - name: Jenkins Server PHP dependences
+    apt:
+      name: phploc
+      service: present
+
+
+  - name: Jenkins Server PHP dependences
+    apt:
+      name: php-{xml,bcmath,bz2,intl,gd,mbstring,mysql,zip}
+      service: present

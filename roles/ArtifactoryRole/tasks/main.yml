@@ -2,30 +2,46 @@
 - name: Download artifactory
   become: yes
   get_url:
-    url: https://releases.jfrog.io/artifactory/artifactory-pro-debs/pool/jfrog-artifactory-pro/jfrog-artifactory-pro-[RELEASE].deb
-    dest: /home/ubuntu/artifactory.deb
+    url: https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/[RELEASE]/jfrog-artifactory-oss-[RELEASE]-linux.tar.gz
+    dest: /home/ubuntu
     mode: 777
 
-- name: Install Gnupg package
+- name: Extract Artifactory
   become: yes
-  remote_user: ubuntu
-  apt:
-    name: gnupg
-    state: present
+  ansible.builtin.unarchive:
+    src: /home/ubuntu/jfrog-artifactory-oss-[RELEASE]-linux.tar.gz
+    dest: /home/ubuntu/artifactory
 
-- name: Install net-tools package
+- name: Run Artifactory
   become: yes
-  remote_user: ubuntu
-  apt:
-    name: net-tools
-    state: present
+  command: /home/ubuntu/artifactory/artifactory/app/bin/artifactoryctl start
 
-
-- name: Install Artifactory
+- name: Check the status
   become: yes
-  command: dpkg -i /home/ubuntu/artifactory.deb
+  command: /home/ubuntu/artifactory/artifactory/app/bin/artifactoryctl check
   notify: Test
-  
+
+
+#- name: Install Gnupg package
+#  become: yes
+#  remote_user: ubuntu
+#  apt:
+#    name: gnupg
+#    state: present
+#
+#- name: Install net-tools package
+#  become: yes
+#  remote_user: ubuntu
+#  apt:
+#    name: net-tools
+#    state: present
+#
+#
+#- name: Install Artifactory
+#  become: yes
+#  command: dpkg -i /home/ubuntu/artifactory.deb
+#  notify: Test
+#  
 
 
 

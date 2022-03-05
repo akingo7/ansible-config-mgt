@@ -27,3 +27,8 @@
     tags:
     - artifactory
 
+-   name: phpdepend
+    import_playbook: ../static-assignments/phpdepend.yml
+    tags:
+    - phpdepend
+
