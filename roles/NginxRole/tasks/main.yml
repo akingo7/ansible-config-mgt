@@ -38,3 +38,10 @@
       path: /etc/nginx/sites-enabled/default
       state: absent
     notify: Check nginx status
+
+
+-   name: Check nginx status
+    become: yes
+    ansible.builtin.service:
+            name: nginx
+            state: started
