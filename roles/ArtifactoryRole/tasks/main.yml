@@ -1,36 +1,58 @@
 ---
-- name: Install Gnupg2 package
+- name: Download artifactory
   become: yes
-  remote_user: ubuntu
+  get_url:
+    src: "https://releases.jfrog.io/artifactory/artifactory-pro-debs/pool/jfrog-artifactory-pro/jfrog-artifactory-pro-[RELEASE].deb"
+    dest: /home/ubuntu/artifactory.deb
+    mode: 777
+
+
+- name: Install Artifactory
   apt:
-    name: gnupg
+    name: /home/ubuntu/artifactory.deb
     state: present
 
-
-
-- name: Download GPG key
-  become: yes
-  remote_user: ubuntu
-  apt_key: 
-    url: https://api.bintray.com/orgs/jfrog/keys/gpg/public.key
-    state: present
-
-- name: Add JFrog repo
-  become: yes
-  remote_user: ubuntu
-  command: echo "deb https://jfrog.bintray.com/artifactory-debs bionic main" | tee /etc/apt/sources.list.d/jfrog.list
-
-- name: Install jfrog
-  become: yes
-  apt:
-    update_cache: yes
-    name: jfrog-artifactory-oss
-    state: present
-
-- name: state artifactory 
-  become: yes
+- name: Restart Artifactory
   service:
     name: artifactory
-    state: restart
-    enable: yes
+    state: started
   notify: Test
+  
+
+
+
+#- name: Install Gnupg2 package
+#  become: yes
+# remote_user: ubuntu
+# apt:
+#   name: gnupg
+#   state: present
+#
+#
+#
+# name: Download GPG key
+# become: yes
+# remote_user: ubuntu
+# apt_key: 
+#   url: https://api.bintray.com/orgs/jfrog/keys/gpg/public.key
+#   state: present
+#
+# name: Add JFrog repo
+# become: yes
+# remote_user: ubuntu
+# command: echo "deb https://jfrog.bintray.com/artifactory-debs bionic main" | tee /etc/apt/sources.list.d/jfrog.list
+#
+# name: Install jfrog
+# become: yes
+# apt:
+#   update_cache: yes
+#   name: jfrog-artifactory-oss
+#   state: present
+#
+# name: state artifactory 
+# become: yes
+# service:
+#   name: artifactory
+#   state: restart
+#   enable: yes
+# notify: Test
