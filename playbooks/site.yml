@@ -1,11 +1,9 @@
 ---
--   name: Load Balancer assignments
-    import_playbook: ../static-assignments/loadbalancers.yml
+-   name: Install webserver on tooling
+    import_playbook: ../static-assignments/tooling.yml
 
-
-
-
-
+-   name: Install mysql on database
+    import_playbook: ../static-assignments/db.yml
 
 #-   name: wireshark assignments
 #    import_playbook: ../static-assignments/common.yml#
