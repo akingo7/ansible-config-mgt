@@ -1,20 +1,13 @@
 
-
 pipeline {
-  agent any
-  stages {
-      stage('Run Ansible Playbook') {
-      steps {
-        parameters {
-    string(name: 'inventory', defaultvalue: 'dev', description: 'This is the inventory file for the environment to deploy configuration')
-  }
-      }
+    agent any
+  {
+
+    parameters {
+      string(name: 'inventory', defaultValue: 'dev',  description: 'This is the inventory file for the environment to deploy configuration')
     }
-
   }
-
-  }
-
+}
 
 pipeline {
   agent any
