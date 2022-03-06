@@ -12,9 +12,11 @@
     dest: /home/ubuntu
     mode: 0777
 
-- name: Extract Artifactory
-  become: yes
-  command: tar -xvzf /home/ubuntu/jfrog-artifactory-oss-7.35.1-linux.tar.gz artifactory/
+- name: Unarchive a file
+  ansible.builtin.unarchive:
+    src: /home/ubuntu/jfrog-artifactory-oss-7.35.1-linux.tar.gz
+    dest: /home/ubuntu/artifactory/
+    remote_src: yes
 
 - name: Run Artifactory
   become: yes
