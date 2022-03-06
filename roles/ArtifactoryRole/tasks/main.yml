@@ -14,9 +14,9 @@
 
 - name: Extract Artifactory
   become: yes
-  ansible.builtin.unarchive:
-    src: /home/ubuntu/jfrog-artifactory-oss-7.35.1-linux.tar.gz
-    dest: /home/ubuntu/artifactory
+  command: tar -xvzf /home/ubuntu/jfrog-artifactory-oss-7.35.1-linux.tar.gz artifactory/
+
+- name: Rename File
 
 - name: Run Artifactory
   become: yes
