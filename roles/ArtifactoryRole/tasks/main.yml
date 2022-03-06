@@ -10,7 +10,7 @@
   get_url:
     url: https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/[RELEASE]/jfrog-artifactory-oss-[RELEASE]-linux.tar.gz
     dest: /home/ubuntu
-    mode: 777
+    mode: 0777
 
 - name: Extract Artifactory
   become: yes
