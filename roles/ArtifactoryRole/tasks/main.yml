@@ -26,7 +26,7 @@
 
 - name: Run Artifactory
   become: yes
-  command: /home/ubuntu/artifactory/artifactory/app/bin/artifactoryctl start
+  command: /home/ubuntu/artifactory/artifactory-oss-7.35.1/app/bin/artifactoryctl start
 
 - name: Check the status
   become: yes
