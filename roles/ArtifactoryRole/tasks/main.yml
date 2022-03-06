@@ -17,7 +17,7 @@
     path: /home/ubuntu/artifactory/
     state: directory
 
-    
+
 - name: Unarchive a file
   ansible.builtin.unarchive:
     src: /home/ubuntu/jfrog-artifactory-oss-7.35.1-linux.tar.gz
@@ -30,7 +30,7 @@
 
 - name: Check the status
   become: yes
-  command: /home/ubuntu/artifactory/artifactory/app/bin/artifactoryctl check
+  command: /home/ubuntu/artifactory/artifactory-oss-7.35.1/app/bin/artifactoryctl check
   notify: Test
 
 
