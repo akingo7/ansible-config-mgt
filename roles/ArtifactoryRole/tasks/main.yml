@@ -12,6 +12,12 @@
     dest: /home/ubuntu
     mode: 0777
 
+- name: Create directory
+  file:
+    path: /home/ubuntu/artifactory/
+    state: directory
+
+    
 - name: Unarchive a file
   ansible.builtin.unarchive:
     src: /home/ubuntu/jfrog-artifactory-oss-7.35.1-linux.tar.gz
