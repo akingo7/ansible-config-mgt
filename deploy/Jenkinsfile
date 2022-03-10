@@ -1,5 +1,5 @@
 pipeline {
-  node ('built-in')
+  node ("built-in"){
   stages {
     stage('Install Nginx Webserver') {
       steps {
