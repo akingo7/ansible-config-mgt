@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Run Ansible Playbook') {
+    stage('Install Nginx Webserver') {
       steps {
-        ansiblePlaybook(playbook: 'playbooks/site.yml', disableHostKeyChecking: true, vaultCredentialsId: '	Hlove', inventory: '${inventory}', tags: 'database')
+        ansiblePlaybook(playbook: 'playbooks/site.yml', disableHostKeyChecking: true, vaultCredentialsId: '	Hlove', inventory: '${inventory}', tags: 'webserver')
       }
     }
 
