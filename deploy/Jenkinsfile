@@ -1,5 +1,5 @@
 pipeline {
-  agent built-in
+  agent master
   stages {
     stage('Install Nginx Webserver') {
       steps {
