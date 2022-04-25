@@ -4,9 +4,12 @@
     become: yes
     become_user: root
     tasks: 
-        -   name: Ensure that wireshark is at the latest version 
-            apt:
-                name: wireshark
-                state: latest
+      - name: Update APT package manager
+        apt:
+          update_cache: yes
+        - name: Ensure that wireshark is at the latest version 
+          apt:
+            name: wireshark
+            state: latest
 
 
