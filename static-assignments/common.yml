@@ -5,33 +5,8 @@
     become_user: root
     tasks: 
         -   name: Ensure that wireshark is at the latest version 
-            yum:
-                name: wireshark
-                state: latest
-
--   name: Update Loadbalancer
-    hosts: lb
-    remote_user: ubuntu
-    become: yes
-    become_user: root
-    tasks:
-        -   name: Update apt repo
-            apt:
-                update_cache: yes
-
-        -   name: Ensure that wireshark is at the latest version
             apt:
                 name: wireshark
                 state: latest
-        -   name: Check if ssh is running
-            service:
-                name: ssh
-                state: started
-        -   name: create a file in /home/ubuntu directory
-            file: 
-                path: /home/ubuntu/NewFile.txt
-                state: file
-        -   name: write into the file created above
-            command: echo "Hello Beautiful People" >> /home/ubuntu/NewFile.txt
 
-            
+
