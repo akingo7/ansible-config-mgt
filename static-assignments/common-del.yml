@@ -1,17 +1,6 @@
 ---
--   name: Delete wireshark from nfs, database and webserver
-    hosts: nfs, webs, db
-    remote_user: ec2-user
-    become: yes
-    become_user: root
-    tasks:
-    -   name: Remove wireshark
-        yum:
-            name: wireshark
-            state: absent
-
 -   name: Delete wireshark from loadbalancer
-    hosts: lb
+    hosts: webserver
     remote_user: ubuntu
     become: yes
     become_user: root
@@ -23,8 +12,4 @@
             purge: yes
             autoremove: yes
             autoclean: yes
-    -   name: Remove the file created in /home/ubuntu
-        file:
-            path: /home/ubuntu/NewFile.txt
-            state: removed
             
