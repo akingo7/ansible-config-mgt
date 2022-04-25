@@ -13,11 +13,16 @@
     import_playbook: ../static-assignments/common.yml
     tags:
     - wireshark
+    
+-   name: Delete wireshark package
+    import_playbook: ../static-assignments/common-del.yml
+    tags:
+    - wiresharkDelete
 
-#-   name: Import dynamic variables    
-#    import_playbook: ../dynamic-assignments/env-vars.yml
-#    tags:
-#    - dynamic_variable
+-   name: Import dynamic variables    
+    import_playbook: ../dynamic-assignments/env-vars.yml
+    tags:
+    - dynamic_variable
 
 -   name: Webserver assignments 
     import_playbook: ../static-assignments/webservers.yml
