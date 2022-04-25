@@ -16,3 +16,6 @@
 
 [db]
 
+[webserver]
+172.31.26.139 ansible_ssh_user='ubuntu'
+
